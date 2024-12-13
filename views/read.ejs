@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Book</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="h-full w-full bg-zinc-900 p-10 text-white flex flex-wrap flex-col bg-fixed">
+        <div class="nav py-0 ml-[-35px] pr-0">
+            <a class="text-pink-500 " href="/">: Go Home</a>
+        </div>
+
+        <!--user card -->
+        <div class="users flex flex-wrap gap-4" >
+          
+          <% if(users.length > 0){%>
+            <% users.forEach(function(user){ %>
+              <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
+                <div class="relative h-72 m-2.5 overflow-hidden text-white rounded-md overflow-hidden">
+                  <img class="w-full h-full object-cover object-top" src=<%= user.image %> alt="">
+                </div>
+                <div class="p-4">
+                  <h6 class="mb-2 text-white text-slate-800 text-xl font-semibold">
+                    <%= user.name %>
+                  </h6>
+                  <h3 class="text-slate-600 text-white leading-normal font-light">
+                    <%= user.email %>
+                  </h3>
+                </div>
+                <div class="px-4 pb-4 pt-0 mt-2 flex flex-wrap gap-5">
+                  
+                    <a href="/edit/<%= user._id %>" class="rounded-md text-blue-500 py-2 px-4   text-center text-sm   transition-all shadow-md focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700   active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                      Edit
+                    </a>
+                    <a href="/delete/<%= user._id %>" class="rounded-md text-red-500 py-2 px-4   text-center text-sm   transition-all shadow-md focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700   active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none border-white">
+                      Delete
+                    </a>
+                  
+                  
+                </div>
+              </div> 
+            <% })%>
+          <% }else{ %>
+            <div class="grid place-items-center h-screen">
+              <h1>no users yet</h1>
+            </div>
+          <% } %>
+            
+          
+            
+
+          
+        </div>
+    </div>
+</body>
+</html>

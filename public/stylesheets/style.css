@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('https://wallpapers.com/images/hd/pure-black-background-y8wp2r83b15xxdi6.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; 
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}

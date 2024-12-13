@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Book</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class=" bg-zinc-900 p-10 text-white flex flex-wrap flex-col items-center justify-center h-screen ">
+        <div class="nav py-0">
+            <a class="text-pink-500" href="/read">Display Profiles: </a>
+        </div>
+        <form action="/update/<%= user._id%>" method="post">
+            <h1 class="flex my-3 py-3 text-[35px] justify-center ">Update Profile</h1>
+            <input class="flex my-3 px-5 py-3 bg-zinc-600 rounded-xl border-2 border-zinc-600 w-full" type="text" name="name" placeholder="Enter name" value="<%= user.name %>">
+            <input class="flex my-3 px-5 py-3 bg-zinc-600 rounded-xl border-2 border-zinc-600 w-full" type="text" name="email" placeholder="Enter email" value="<%= user.email %>">
+            <input class="flex my-3 px-5 py-3 bg-zinc-600 rounded-xl border-2 border-zinc-600 w-full" type="text" name="image" placeholder="Enter the image url" value="<%= user.image %>">
+            
+            <input class="flex px-7 py-2 my-3 cursor-pointer bg-yellow-600 rounded-xl border-2 border-zinc-600 items-center justify-center" type="submit" placeholder="Update user"  value="Update">
+        </form>
+    </div>
+</body>
+</html>
